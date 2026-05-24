@@ -32,4 +32,18 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
