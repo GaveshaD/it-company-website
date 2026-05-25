@@ -23,10 +23,17 @@ defineProps({
 .card h2 {
   margin-bottom: 10px;
   color: #222;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card p {
   color: #555;
   line-height: 1.5;
 }
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 </style>
