@@ -31,7 +31,7 @@
   font-size: 20px;
   max-width: 700px;
   margin: auto;
-  color: #555;
+  color: #e2e8f0;
   line-height: 1.6;
 }
 
