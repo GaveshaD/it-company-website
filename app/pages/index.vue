@@ -14,7 +14,11 @@
 <style scoped>
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  border-radius: 20px;
+  margin-top: 30px;
 }
 
 .hero h1 {
