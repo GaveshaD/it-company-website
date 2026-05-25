@@ -1,10 +1,12 @@
 <template>
   <div>
-    <nav class="navbar">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/services">Services</NuxtLink>
-    </nav>
+   <nav class="navbar">
+  <NuxtLink to="/">Home</NuxtLink>
+  <NuxtLink to="/about">About</NuxtLink>
+  <NuxtLink to="/services">Services</NuxtLink>
+  <NuxtLink to="/contact">Contact</NuxtLink>
+  <NuxtLink to="/projects">Projects</NuxtLink>
+</nav>
 
     <div class="container">
     <NuxtPage />
