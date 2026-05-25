@@ -4,20 +4,20 @@
     <p>Here are some projects completed by FutureTech Solutions.</p>
 
     <div class="project-grid">
-      <ProjectCard
-        title="Business Website"
-        description="A responsive company website built for a small business."
-      />
+      <div class="project-card">
+        <h2>Business Website</h2>
+        <p>A responsive company website built for a small business.</p>
+      </div>
 
-      <ProjectCard
-        title="E-Commerce Platform"
-        description="An online store with product listings and checkout flow."
-      />
+      <div class="project-card">
+        <h2>E-Commerce Platform</h2>
+        <p>An online store with product listings and checkout flow.</p>
+      </div>
 
-      <ProjectCard
-        title="Mobile App Dashboard"
-        description="A clean dashboard UI for managing mobile app users."
-      />
+      <div class="project-card">
+        <h2>Mobile App Dashboard</h2>
+        <p>A clean dashboard UI for managing mobile app users.</p>
+      </div>
     </div>
   </section>
 </template>
@@ -42,6 +42,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+}
+
+.project-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 800px) {
