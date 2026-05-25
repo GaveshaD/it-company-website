@@ -22,9 +22,9 @@
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 56px;
   margin-bottom: 20px;
-  color: #222;
+  color: white;
 }
 
 .hero p {
