@@ -36,4 +36,10 @@ body {
 .container {
   padding: 30px;
 }
+
+.router-link-exact-active {
+  color: #00aaff !important;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 5px;
+}
 </style>
