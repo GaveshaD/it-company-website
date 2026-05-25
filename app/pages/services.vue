@@ -3,20 +3,23 @@
     <h1 class="title">Our Services</h1>
 
     <div class="services">
-      <ServiceCard
-        title="Web Development"
-        description="Modern responsive websites using Nuxt and Vue."
-      />
+<ServiceCard
+  icon="💻"
+  title="Web Development"
+  description="Modern responsive websites using Nuxt and Vue."
+/>
 
-      <ServiceCard
-        title="Mobile Apps"
-        description="Android and iOS application development."
-      />
+<ServiceCard
+  icon="📱"
+  title="Mobile Apps"
+  description="Android and iOS application development."
+/>
 
-      <ServiceCard
-        title="Cloud Solutions"
-        description="Scalable cloud infrastructure and deployment."
-      />
+<ServiceCard
+  icon="☁️"
+  title="Cloud Solutions"
+  description="Scalable cloud infrastructure and deployment."
+/>
     </div>
   </div>
 </template>

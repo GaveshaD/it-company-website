@@ -1,12 +1,16 @@
 <template>
   <div class="card">
+    <div class="icon">{{ icon }}</div>
+
     <h2>{{ title }}</h2>
+
     <p>{{ description }}</p>
   </div>
 </template>
 
 <script setup>
 defineProps({
+  icon: String,
   title: String,
   description: String
 })
@@ -28,5 +32,10 @@ defineProps({
 .card p {
   color: #555;
   line-height: 1.5;
+}
+
+.icon {
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 </style>
