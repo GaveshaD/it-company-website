@@ -1,10 +1,12 @@
 <template>
   <div>
-    <nav class="navbar">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/services">Services</NuxtLink>
-    </nav>
+   <nav class="navbar">
+  <NuxtLink to="/">Home</NuxtLink>
+  <NuxtLink to="/about">About</NuxtLink>
+  <NuxtLink to="/services">Services</NuxtLink>
+  <NuxtLink to="/contact">Contact</NuxtLink>
+  <NuxtLink to="/projects">Projects</NuxtLink>
+</nav>
 
     <div class="container">
     <NuxtPage />
@@ -29,6 +31,12 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+
+.router-link-exact-active {
+  color: #00aaff !important;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 5px;
 }
 
 .container {
