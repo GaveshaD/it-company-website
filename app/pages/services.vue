@@ -17,6 +17,11 @@
         title="Cloud Solutions"
         description="Scalable cloud infrastructure and deployment."
       />
+
+      <SectionTitle
+        title="Our Services"
+        subtitle="We provide high-quality digital solutions for businesses."
+      />
     </div>
   </div>
 </template>
