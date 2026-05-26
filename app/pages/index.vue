@@ -14,20 +14,24 @@
 <style scoped>
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  border-radius: 20px;
+  margin-top: 30px;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 56px;
   margin-bottom: 20px;
-  color: #222;
+  color: white;
 }
 
 .hero p {
   font-size: 20px;
   max-width: 700px;
   margin: auto;
-  color: #555;
+  color: #e2e8f0;
   line-height: 1.6;
 }
 

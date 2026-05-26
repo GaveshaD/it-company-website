@@ -4,6 +4,8 @@
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/about">About</NuxtLink>
       <NuxtLink to="/services">Services</NuxtLink>
+      <NuxtLink to="/projects">Projects</NuxtLink>
+      <NuxtLink to="/contact">Contact</NuxtLink>
     </nav>
 
     <div class="container">
@@ -33,5 +35,11 @@ body {
 
 .container {
   padding: 30px;
+}
+
+.router-link-exact-active {
+  color: #00aaff !important;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 5px;
 }
 </style>
