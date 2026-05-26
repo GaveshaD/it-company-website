@@ -9,7 +9,37 @@
 
     <button>Get Started</button>
   </section>
+
+  <section class="testimonials">
+  <SectionTitle
+    title="What Our Clients Say"
+    subtitle="Trusted by businesses around the world."
+  />
+
+  <div class="testimonial-grid">
+    <TestimonialCard
+      message="FutureTech built an amazing website for our company."
+      name="John Doe"
+      role="Business Owner"
+    />
+
+    <TestimonialCard
+      message="Professional team and excellent support."
+      name="Sarah Smith"
+      role="Startup Founder"
+    />
+
+    <TestimonialCard
+      message="Their cloud solutions improved our infrastructure."
+      name="Michael Lee"
+      role="Tech Lead"
+    />
+  </div>
+</section>
+
 </template>
+
+
 
 <style scoped>
 .hero {
@@ -46,5 +76,21 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.testimonials {
+  margin-top: 100px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
