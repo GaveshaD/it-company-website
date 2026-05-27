@@ -12,6 +12,10 @@
 </template>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -19,4 +23,5 @@ body {
 .container {
   padding: 30px;
 }
+
 </style>
