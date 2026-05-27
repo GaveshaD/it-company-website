@@ -5,8 +5,12 @@
     <p>
       Have a project idea? Let's work together.
     </p>
+    <p v-if="isSent" class="success-message">
+      Your message was sent successfully!
+    </p>
 
-    <form class="contact-form">
+    <form class="contact-form"@submit.prevent="sendMessage">
+      
       <input type="text" placeholder="Your Name" required />
 
       <input type="email" placeholder="Your Email" required />
@@ -16,6 +20,7 @@
         rows="6"
         required
     > </textarea>
+    
 
       <button type="submit">
         Send Message
@@ -23,6 +28,14 @@
     </form>
   </section>
 </template>
+
+<script setup>
+const isSent = ref(false)
+
+const sendMessage = () => {
+  isSent.value = true
+}
+</script>
 
 <style scoped>
 .contact {
@@ -68,5 +81,13 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+.success-message {
+  background: #dcfce7;
+  color: #166534;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 </style>
