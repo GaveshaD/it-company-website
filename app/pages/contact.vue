@@ -7,14 +7,15 @@
     </p>
 
     <form class="contact-form">
-      <input type="text" placeholder="Your Name" />
+      <input type="text" placeholder="Your Name" required />
 
-      <input type="email" placeholder="Your Email" />
+      <input type="email" placeholder="Your Email" required />
 
       <textarea
         placeholder="Your Message"
         rows="6"
-      ></textarea>
+        required
+    > </textarea>
 
       <button type="submit">
         Send Message
