@@ -37,6 +37,18 @@
   </div>
 </section>
 
+<section class="cta">
+  <h2>Ready to Build Your Next Project?</h2>
+
+  <p>
+    Let's create modern digital solutions together.
+  </p>
+
+  <NuxtLink to="/contact" class="cta-button">
+    Contact Us
+  </NuxtLink>
+</section>
+
 </template>
 
 
@@ -105,5 +117,40 @@ button:hover {
   .hero {
     padding: 60px 20px;
   }
+}
+.cta {
+  margin-top: 100px;
+  text-align: center;
+  background: #111827;
+  color: white;
+  padding: 80px 20px;
+  border-radius: 20px;
+}
+
+.cta h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: #d1d5db;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
 }
 </style>
