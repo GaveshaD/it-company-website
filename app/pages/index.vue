@@ -93,4 +93,17 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+}
 </style>

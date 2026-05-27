@@ -27,4 +27,15 @@
   border-bottom: 2px solid #00aaff;
   padding-bottom: 5px;
 }
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+}
 </style>
