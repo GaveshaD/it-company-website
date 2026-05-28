@@ -11,15 +11,26 @@
 
     <form class="contact-form"@submit.prevent="sendMessage">
       
-      <input type="text" placeholder="Your Name" required />
+      <input
+        type="text"
+        placeholder="Your Name"
+        v-model="name"
+        required
+      />
 
-      <input type="email" placeholder="Your Email" required />
+      <input
+        type="email"
+        placeholder="Your Email"
+        v-model="email"
+        required
+      />
 
       <textarea
         placeholder="Your Message"
         rows="6"
+        v-model="message"
         required
-    > </textarea>
+      ></textarea>
     
 
 <button type="submit" :disabled="isLoading || isSent">
@@ -39,12 +50,20 @@
 const isSent = ref(false)
 const isLoading = ref(false)
 
+const name = ref("")
+const email = ref("")
+const message = ref("")
+
 const sendMessage = () => {
   isLoading.value = true
 
   setTimeout(() => {
     isLoading.value = false
     isSent.value = true
+
+    name.value = ""
+    email.value = ""
+    message.value = ""
   }, 2000)
 }
 </script>
