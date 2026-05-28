@@ -22,8 +22,14 @@
     > </textarea>
     
 
-<button type="submit">
-  {{ isLoading ? "Sending..." : "Send Message" }}
+<button type="submit" :disabled="isLoading || isSent">
+  {{
+    isSent
+      ? "Message Sent"
+      : isLoading
+      ? "Sending..."
+      : "Send Message"
+  }}
 </button>
     </form>
   </section>
@@ -95,5 +101,9 @@ button:hover {
   border-radius: 8px;
   margin-bottom: 20px;
   font-weight: bold;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 </style>
