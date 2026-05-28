@@ -9,6 +9,10 @@
       Your message was sent successfully!
     </p>
 
+    <p v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </p>
+
     <form class="contact-form"@submit.prevent="sendMessage">
       
       <input
@@ -58,8 +62,10 @@ const isLoading = ref(false)
 const name = ref("")
 const email = ref("")
 const message = ref("")
+const errorMessage = ref("")
 
 const sendMessage = () => {
+  errorMessage.value = ""
   isLoading.value = true
 
   setTimeout(() => {
@@ -135,5 +141,13 @@ button:disabled {
   margin-top: 8px;
   color: #666;
   font-size: 14px;
+}
+.error-message {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 </style>
