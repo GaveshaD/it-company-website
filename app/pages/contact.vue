@@ -29,8 +29,13 @@
         placeholder="Your Message"
         rows="6"
         v-model="message"
+        maxlength="200"
         required
       ></textarea>
+
+      <p class="char-count">
+          {{ message.length }}/200 characters
+      </p>
     
 
 <button type="submit" :disabled="isLoading || isSent">
@@ -124,5 +129,11 @@ button:hover {
 button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+.char-count {
+  text-align: right;
+  margin-top: 8px;
+  color: #666;
+  font-size: 14px;
 }
 </style>
