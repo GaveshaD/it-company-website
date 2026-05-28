@@ -19,14 +19,14 @@
         type="text"
         placeholder="Your Name"
         v-model="name"
-        required
+        
       />
 
       <input
         type="email"
         placeholder="Your Email"
         v-model="email"
-        required
+        
       />
 
       <textarea
@@ -34,7 +34,7 @@
         rows="6"
         v-model="message"
         maxlength="200"
-        required
+        
       ></textarea>
 
       <p class="char-count">
@@ -66,8 +66,19 @@ const errorMessage = ref("")
 
 const sendMessage = () => {
   errorMessage.value = ""
+  isSent.value = false
+
+  if (!name.value || !email.value || !message.value) {
+    errorMessage.value = "Please fill all fields."
+    return
+  }
+
+  if (!email.value.includes("@")) {
+    errorMessage.value = "Please enter a valid email."
+    return
+  }
+
   isLoading.value = true
-}
 
   setTimeout(() => {
     isLoading.value = false
@@ -77,7 +88,9 @@ const sendMessage = () => {
     email.value = ""
     message.value = ""
   }, 2000)
+}
 
+ 
 </script>
 
 <style scoped>
