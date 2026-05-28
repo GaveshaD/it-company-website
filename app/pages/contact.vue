@@ -22,18 +22,24 @@
     > </textarea>
     
 
-      <button type="submit">
-        Send Message
-      </button>
+<button type="submit">
+  {{ isLoading ? "Sending..." : "Send Message" }}
+</button>
     </form>
   </section>
 </template>
 
 <script setup>
 const isSent = ref(false)
+const isLoading = ref(false)
 
 const sendMessage = () => {
-  isSent.value = true
+  isLoading.value = true
+
+  setTimeout(() => {
+    isLoading.value = false
+    isSent.value = true
+  }, 2000)
 }
 </script>
 
