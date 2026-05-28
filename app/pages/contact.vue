@@ -67,6 +67,7 @@ const errorMessage = ref("")
 const sendMessage = () => {
   errorMessage.value = ""
   isLoading.value = true
+}
 
   setTimeout(() => {
     isLoading.value = false
@@ -76,7 +77,7 @@ const sendMessage = () => {
     email.value = ""
     message.value = ""
   }, 2000)
-}
+
 </script>
 
 <style scoped>
