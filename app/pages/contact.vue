@@ -28,6 +28,9 @@
         v-model="email"
         
       />
+      <p v-if="email && !email.includes('@')" class="error-text">
+        Invalid email format
+      </p>
 
       <textarea
         placeholder="Your Message"
@@ -195,5 +198,11 @@ button:disabled {
 
 .reset-btn:hover {
   background: #4b5563;
+}
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 </style>
