@@ -92,14 +92,19 @@ const sendMessage = () => {
 
   isLoading.value = true
 
-  setTimeout(() => {
-    isLoading.value = false
-    isSent.value = true
+setTimeout(() => {
+  isLoading.value = false
+  isSent.value = true
 
-    name.value = ""
-    email.value = ""
-    message.value = ""
-  }, 2000)
+  name.value = ""
+  email.value = ""
+  message.value = ""
+
+  setTimeout(() => {
+    isSent.value = false
+  }, 3000)
+
+}, 2000)
 }
 
 const resetForm = () => {
