@@ -51,6 +51,15 @@
       : "Send Message"
   }}
 </button>
+
+<button
+  type="button"
+  class="reset-btn"
+  @click="resetForm"
+>
+  Clear Form
+</button>
+
     </form>
   </section>
 </template>
@@ -88,6 +97,15 @@ const sendMessage = () => {
     email.value = ""
     message.value = ""
   }, 2000)
+}
+
+const resetForm = () => {
+  name.value = ""
+  email.value = ""
+  message.value = ""
+
+  isSent.value = false
+  errorMessage.value = ""
 }
 
  
@@ -163,5 +181,19 @@ button:disabled {
   border-radius: 8px;
   margin-bottom: 20px;
   font-weight: bold;
+}
+.reset-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #6b7280;
+  color: white;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: #4b5563;
 }
 </style>
