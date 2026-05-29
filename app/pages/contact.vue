@@ -40,13 +40,14 @@
         
       ></textarea>
 
-      <p class="char-count">
-          {{ message.length }}/200 characters
+      <p
+        class="char-count"
+        :class="{ warning: 200 - message.length < 20 }"
+      >
+        {{ 200 - message.length }} characters remaining
       </p>
 
-      <p v-if="submitCount > 0" class="submit-count">
-          Messages sent: {{ submitCount }}
-      </p>
+      
 
 <button type="submit" :disabled="isLoading || isSent">
   {{
@@ -65,6 +66,10 @@
 >
   Clear Form
 </button>
+
+      <p v-if="submitCount > 0" class="submit-count">
+          Messages sent: {{ submitCount }}
+      </p>
 
     </form>
   </section>
@@ -228,5 +233,9 @@ textarea:focus {
   margin-top: 15px;
   color: #666;
   font-size: 14px;
+}
+.warning {
+  color: red;
+  font-weight: bold;
 }
 </style>
