@@ -43,7 +43,10 @@
       <p class="char-count">
           {{ message.length }}/200 characters
       </p>
-    
+
+      <p class="submit-count">
+        Messages sent: {{ submitCount }}
+      </p>
 
 <button type="submit" :disabled="isLoading || isSent">
   {{
@@ -70,6 +73,7 @@
 <script setup>
 const isSent = ref(false)
 const isLoading = ref(false)
+const submitCount = ref(0)
 
 const name = ref("")
 const email = ref("")
@@ -96,6 +100,8 @@ setTimeout(() => {
   isLoading.value = false
   isSent.value = true
 
+  submitCount.value++
+
   name.value = ""
   email.value = ""
   message.value = ""
@@ -115,6 +121,7 @@ const resetForm = () => {
   isSent.value = false
   errorMessage.value = ""
 }
+
 
  
 </script>
@@ -215,5 +222,11 @@ textarea:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+.submit-count {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 14px;
 }
 </style>
