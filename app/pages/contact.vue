@@ -205,4 +205,10 @@ button:disabled {
   margin-top: 5px;
   margin-bottom: 10px;
 }
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
 </style>
