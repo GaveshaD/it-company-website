@@ -44,8 +44,8 @@
           {{ message.length }}/200 characters
       </p>
 
-      <p class="submit-count">
-        Messages sent: {{ submitCount }}
+      <p v-if="submitCount > 0" class="submit-count">
+          Messages sent: {{ submitCount }}
       </p>
 
 <button type="submit" :disabled="isLoading || isSent">
