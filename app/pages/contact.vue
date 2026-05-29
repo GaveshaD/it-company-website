@@ -71,6 +71,11 @@
           Messages sent: {{ submitCount }}
       </p>
 
+
+      <p v-if="lastSubmitted" class="last-submitted">
+          Last submitted at: {{ lastSubmitted }}
+      </p>
+
     </form>
   </section>
 </template>
@@ -79,6 +84,7 @@
 const isSent = ref(false)
 const isLoading = ref(false)
 const submitCount = ref(0)
+const lastSubmitted = ref("")
 
 const name = ref("")
 const email = ref("")
@@ -106,6 +112,8 @@ setTimeout(() => {
   isSent.value = true
 
   submitCount.value++
+
+  lastSubmitted.value = new Date().toLocaleTimeString()
 
   name.value = ""
   email.value = ""
@@ -237,5 +245,10 @@ textarea:focus {
 .warning {
   color: red;
   font-weight: bold;
+}
+.last-submitted {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
 }
 </style>
