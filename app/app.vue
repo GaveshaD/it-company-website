@@ -16,6 +16,18 @@
 
 <script setup>
   const isDark = ref(false)
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem("darkMode")
+
+  if (savedTheme !== null) {
+    isDark.value = savedTheme === "true"
+  }
+})
+
+watch(isDark, (newValue) => {
+  localStorage.setItem("darkMode", newValue)
+})
 </script>
 
 
