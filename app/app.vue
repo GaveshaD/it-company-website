@@ -67,6 +67,24 @@ body {
   background: #1d4ed8;
   transform: translateY(-2px);
 }
+body,
+.container,
+.dark,
+input,
+textarea,
+button {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.dark .theme-toggle {
+  background: #130b31;
+}
+
+.dark .theme-toggle:hover {
+  background: #130b31;
+}
 </style>
 
 
