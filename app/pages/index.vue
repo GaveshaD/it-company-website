@@ -34,20 +34,18 @@
       name="Michael Lee"
       role="Tech Lead"
     />
+
+    
   </div>
 </section>
 
-<section class="cta">
-  <h2>Ready to Build Your Next Project?</h2>
+    <CallToAction
+      title="Ready to Build Your Next Project?"
+      description="Let's create modern digital solutions together."
+      button-text="Contact Us"
+      button-link="/contact"
+/>
 
-  <p>
-    Let's create modern digital solutions together.
-  </p>
-
-  <NuxtLink to="/contact" class="cta-button">
-    Contact Us
-  </NuxtLink>
-</section>
 
 </template>
 
