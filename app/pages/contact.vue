@@ -40,10 +40,14 @@
         
       ></textarea>
 
-      <p class="char-count">
-          {{ message.length }}/200 characters
+      <p
+        class="char-count"
+        :class="{ warning: 200 - message.length < 20 }"
+      >
+        {{ 200 - message.length }} characters remaining
       </p>
-    
+
+      
 
 <button type="submit" :disabled="isLoading || isSent">
   {{
@@ -63,6 +67,18 @@
   Clear Form
 </button>
 
+      <p v-if="submitCount > 0" class="submit-count">
+          Messages sent: {{ submitCount }}
+      </p>
+
+
+      <p v-if="lastSubmitted" class="last-submitted">
+          Last submitted at: {{ lastSubmitted }}
+      </p>
+
+      <p v-if="lastSubmittedDate" class="last-submitted">
+          Date: {{ lastSubmittedDate }}
+      </p>
     </form>
   </section>
 </template>
@@ -70,6 +86,9 @@
 <script setup>
 const isSent = ref(false)
 const isLoading = ref(false)
+const submitCount = ref(0)
+const lastSubmitted = ref("")
+const lastSubmittedDate = ref("")
 
 const name = ref("")
 const email = ref("")
@@ -92,14 +111,24 @@ const sendMessage = () => {
 
   isLoading.value = true
 
-  setTimeout(() => {
-    isLoading.value = false
-    isSent.value = true
+setTimeout(() => {
+  isLoading.value = false
+  isSent.value = true
 
-    name.value = ""
-    email.value = ""
-    message.value = ""
-  }, 2000)
+  submitCount.value++
+
+  lastSubmitted.value = new Date().toLocaleTimeString()
+  lastSubmittedDate.value = new Date().toLocaleDateString()
+
+  name.value = ""
+  email.value = ""
+  message.value = ""
+
+  setTimeout(() => {
+    isSent.value = false
+  }, 3000)
+
+}, 2000)
 }
 
 const resetForm = () => {
@@ -110,6 +139,7 @@ const resetForm = () => {
   isSent.value = false
   errorMessage.value = ""
 }
+
 
  
 </script>
@@ -204,5 +234,26 @@ button:disabled {
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+.submit-count {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 14px;
+}
+.warning {
+  color: red;
+  font-weight: bold;
+}
+.last-submitted {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
 }
 </style>
