@@ -76,6 +76,9 @@
           Last submitted at: {{ lastSubmitted }}
       </p>
 
+      <p v-if="lastSubmittedDate" class="last-submitted">
+          Date: {{ lastSubmittedDate }}
+      </p>
     </form>
   </section>
 </template>
@@ -85,6 +88,7 @@ const isSent = ref(false)
 const isLoading = ref(false)
 const submitCount = ref(0)
 const lastSubmitted = ref("")
+const lastSubmittedDate = ref("")
 
 const name = ref("")
 const email = ref("")
@@ -114,6 +118,7 @@ setTimeout(() => {
   submitCount.value++
 
   lastSubmitted.value = new Date().toLocaleTimeString()
+  lastSubmittedDate.value = new Date().toLocaleDateString()
 
   name.value = ""
   email.value = ""
