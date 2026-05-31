@@ -50,28 +50,16 @@
 <script setup>
 import { ref, computed } from "vue"
 
-const projects = ref([
-  {
-    title: "Business Website",
-    category: "Web"
-  },
-  {
-    title: "E-Commerce Platform",
-    category: "Web"
-  },
-  {
-    title: "Mobile App Dashboard",
-    category: "Mobile"
-  }
-])
-  const selectedCategory = ref("All")
+import { projects } from "~/data/projects"
 
-  const filteredProjects = computed(() => {
+const selectedCategory = ref("All")
+
+const filteredProjects = computed(() => {
   if (selectedCategory.value === "All") {
-    return projects.value
+    return projects
   }
 
-  return projects.value.filter(
+  return projects.filter(
     project => project.category === selectedCategory.value
   )
 })
