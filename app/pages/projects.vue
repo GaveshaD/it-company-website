@@ -24,6 +24,13 @@
     >
         Mobile
       </button>
+
+      <button
+        :class="{ active: selectedCategory === 'Cloud' }"
+        @click="selectedCategory = 'Cloud'"
+    >
+        Cloud
+</button>
     </div>
 
     <div class="project-grid">
@@ -33,7 +40,9 @@
         :title="project.title"
         
       />
- 
+      <p v-if="filteredProjects.length === 0" class="no-projects">
+        No projects found.
+      </p>
     </div>
   </section>
 </template>
@@ -133,5 +142,10 @@ const projects = ref([
 .filters button.active {
   background: #2563eb;
   color: white;
+}
+.no-projects {
+  text-align: center;
+  color: #666;
+  margin-top: 30px;
 }
 </style>
