@@ -38,6 +38,7 @@
         v-for="project in filteredProjects"
         :key="project.title"
         :title="project.title"
+        :description="project.description"
         
       />
       <p v-if="filteredProjects.length === 0" class="no-projects">
