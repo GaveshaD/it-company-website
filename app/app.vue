@@ -88,6 +88,10 @@ button {
 .dark .theme-toggle:hover {
   background: #130b31;
 }
+.dark .cta {
+  background: linear-gradient(to right, #0f172a, #1e3a8a) !important;
+  color: white;
+}
 
 
 </style>
