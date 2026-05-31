@@ -8,28 +8,28 @@
         :class="{ active: selectedCategory === 'All' }"
         @click="selectedCategory = 'All'"
     >
-        All
+        All ({{ projects.length }})
       </button>
 
       <button
         :class="{ active: selectedCategory === 'Web' }"
         @click="selectedCategory = 'Web'"
     >
-        Web
+        Web ({{ projects.filter(project => project.category === 'Web').length }})
       </button>
 
       <button
         :class="{ active: selectedCategory === 'Mobile' }"
         @click="selectedCategory = 'Mobile'"
     >
-        Mobile
+        Mobile ({{ projects.filter(project => project.category === 'Mobile').length }})
       </button>
 
       <button
         :class="{ active: selectedCategory === 'Cloud' }"
         @click="selectedCategory = 'Cloud'"
     >
-        Cloud
+        Cloud ({{ projects.filter(project => project.category === 'Cloud').length }})
 </button>
     </div>
 
