@@ -4,9 +4,26 @@
     <p>Here are some projects completed by FutureTech Solutions.</p>
 
     <div class="filters">
-      <button @click="selectedCategory = 'All'">All</button>
-      <button @click="selectedCategory = 'Web'">Web</button>
-      <button @click="selectedCategory = 'Mobile'">Mobile</button>
+      <button
+        :class="{ active: selectedCategory === 'All' }"
+        @click="selectedCategory = 'All'"
+    >
+        All
+      </button>
+
+      <button
+        :class="{ active: selectedCategory === 'Web' }"
+        @click="selectedCategory = 'Web'"
+    >
+        Web
+      </button>
+
+      <button
+        :class="{ active: selectedCategory === 'Mobile' }"
+        @click="selectedCategory = 'Mobile'"
+    >
+        Mobile
+      </button>
     </div>
 
     <div class="project-grid">
@@ -97,5 +114,24 @@ const projects = ref([
 
 .filters button:hover {
   background: #1d4ed8;
+}
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filters button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #e5e7eb;
+}
+
+.filters button.active {
+  background: #2563eb;
+  color: white;
 }
 </style>
