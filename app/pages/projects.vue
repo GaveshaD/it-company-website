@@ -174,4 +174,5 @@ const filteredProjects = computed(() => {
   color: #666;
   font-size: 14px;
 }
+
 </style>
