@@ -3,6 +3,14 @@
     <h1>Our Projects</h1>
     <p>Here are some projects completed by FutureTech Solutions.</p>
 
+
+    <input
+      v-model="searchText"
+      class="project-search"
+      type="text"
+      placeholder="Search projects..."
+    />
+
     <div class="filters">
       <button
         :class="{ active: selectedCategory === 'All' }"
@@ -56,13 +64,21 @@ import { projects } from "~/data/projects"
 
 const selectedCategory = ref("All")
 
+const searchText = ref("")
+
 const filteredProjects = computed(() => {
-  const result =
+  let result =
     selectedCategory.value === "All"
       ? projects
       : projects.filter(
           project => project.category === selectedCategory.value
         )
+
+  result = result.filter(project =>
+    project.title.toLowerCase().includes(
+      searchText.value.toLowerCase()
+    )
+  )
 
   return [...result].sort((a, b) =>
     a.title.localeCompare(b.title)
@@ -140,5 +156,14 @@ const filteredProjects = computed(() => {
   text-align: center;
   color: #666;
   margin-top: 30px;
+}
+.project-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 </style>
