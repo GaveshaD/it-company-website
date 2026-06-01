@@ -57,12 +57,15 @@ import { projects } from "~/data/projects"
 const selectedCategory = ref("All")
 
 const filteredProjects = computed(() => {
-  if (selectedCategory.value === "All") {
-    return projects
-  }
+  const result =
+    selectedCategory.value === "All"
+      ? projects
+      : projects.filter(
+          project => project.category === selectedCategory.value
+        )
 
-  return projects.filter(
-    project => project.category === selectedCategory.value
+  return [...result].sort((a, b) =>
+    a.title.localeCompare(b.title)
   )
 })
 
