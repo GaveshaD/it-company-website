@@ -10,6 +10,14 @@
       type="text"
       placeholder="Search projects..."
     />
+    <button
+      v-if="searchText"
+      class="clear-search"
+      @click="searchText = ''"
+    >
+      Clear
+</button>
+
     <p class="search-results">
       {{ filteredProjects.length }} project(s) found
     </p>
@@ -173,5 +181,18 @@ const filteredProjects = computed(() => {
   margin-bottom: 20px;
   color: #666;
   font-size: 14px;
+}
+.clear-search {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.clear-search:hover {
+  opacity: 0.9;
 }
 </style>
