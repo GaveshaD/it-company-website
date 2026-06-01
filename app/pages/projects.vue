@@ -10,9 +10,6 @@
       type="text"
       placeholder="Search projects..."
     />
-    <p class="search-results">
-      {{ filteredProjects.length }} project(s) found
-    </p>
 
     <div class="filters">
       <button
@@ -169,10 +166,4 @@ const filteredProjects = computed(() => {
   border: 1px solid #ccc;
   border-radius: 8px;
 }
-.search-results {
-  margin-bottom: 20px;
-  color: #666;
-  font-size: 14px;
-}
-
 </style>
