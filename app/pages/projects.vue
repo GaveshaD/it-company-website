@@ -53,6 +53,7 @@
         v-for="project in filteredProjects"
         :key="project.title"
         :title="project.title"
+        :highlightedTitle="highlightMatch(project.title)"
         :description="project.description"
         :category="project.category"
         
@@ -81,6 +82,8 @@ const filteredProjects = computed(() => {
           project => project.category === selectedCategory.value
         )
 
+
+
   result = result.filter(project =>
   project.title.toLowerCase().includes(searchText.value.toLowerCase()) ||
   project.description.toLowerCase().includes(searchText.value.toLowerCase()) ||
@@ -91,6 +94,17 @@ const filteredProjects = computed(() => {
     a.title.localeCompare(b.title)
   )
 })
+
+const highlightMatch = (text) => {
+  if (!searchText.value) return text
+
+  const regex = new RegExp(`(${searchText.value})`, "gi")
+
+  return text.replace(
+    regex,
+    '<mark>$1</mark>'
+  )
+}
 
 </script>
 

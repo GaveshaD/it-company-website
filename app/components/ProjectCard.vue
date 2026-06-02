@@ -1,6 +1,6 @@
 <template>
   <div class="project-card">
-    <h2>{{ title }}</h2>
+    <h2 v-html="highlightedTitle || title"></h2>
     <p>{{ description }}</p>
     <span class="category">{{ category }}</span>
   </div>
@@ -9,9 +9,11 @@
 <script setup>
 defineProps({
   title: String,
+  highlightedTitle: String,
   description: String,
   category: String
 })
+
 </script>
 
 <style scoped>
