@@ -18,6 +18,13 @@
   Clear
 </button>
 
+    <p class="search-results">
+      {{ filteredProjects.length }} project(s) found
+      <span v-if="searchText">
+        for "{{ searchText }}"
+      </span>
+    </p>
+
     <div class="filters">
       <button
         :class="{ active: selectedCategory === 'All' }"
@@ -199,5 +206,10 @@ const highlightMatch = (text) => {
 
 .clear-search:hover {
   opacity: 0.9;
+}
+.search-results {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 14px;
 }
 </style>
