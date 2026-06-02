@@ -83,7 +83,8 @@ const filteredProjects = computed(() => {
 
   result = result.filter(project =>
   project.title.toLowerCase().includes(searchText.value.toLowerCase()) ||
-  project.description.toLowerCase().includes(searchText.value.toLowerCase())
+  project.description.toLowerCase().includes(searchText.value.toLowerCase()) ||
+  project.category.toLowerCase().includes(searchText.value.toLowerCase())
 )
 
   return [...result].sort((a, b) =>
