@@ -8,7 +8,7 @@
       v-model="searchText"
       class="project-search"
       type="text"
-      placeholder="Search projects..."
+      placeholder="Search by title, description, or category..."
     />
     <button
       v-if="searchText"
