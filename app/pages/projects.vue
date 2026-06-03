@@ -81,6 +81,7 @@
         :highlightedTitle="highlightMatch(project.title)"
         :description="project.description"
         :category="project.category"
+        :featured="project.featured"
         
       />
       <p v-if="filteredProjects.length === 0" class="no-projects">

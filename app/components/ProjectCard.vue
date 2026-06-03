@@ -1,5 +1,10 @@
 <template>
   <div class="project-card" :class="category.toLowerCase()">
+
+    <span v-if="featured" class="featured-badge">
+      ⭐ Featured
+    </span>
+
     <h2 v-html="highlightedTitle || title"></h2>
     <p>{{ description }}</p>
     <span class="category" :class="category.toLowerCase()">{{ category }}</span>
@@ -11,7 +16,8 @@ defineProps({
   title: String,
   highlightedTitle: String,
   description: String,
-  category: String
+  category: String,
+  featured: Boolean
 })
 
 </script>
@@ -62,5 +68,15 @@ defineProps({
 
 .project-card.cloud {
   border-top: 4px solid #9333ea;
+}
+.featured-badge {
+  display: inline-block;
+  background: gold;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 </style>
