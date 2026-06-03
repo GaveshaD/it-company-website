@@ -1,6 +1,12 @@
 <template>
   <div>
     <h1 class="title">Our Services</h1>
+    <p>We provide a range of IT solutions...</p>
+
+
+    <p class="service-count">
+      We currently offer 3 services.
+    </p>
 
     <div class="services">
       <ServiceCard
@@ -47,5 +53,10 @@
   .services {
     grid-template-columns: 1fr;
   }
+}
+.service-count {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
 }
 </style>
