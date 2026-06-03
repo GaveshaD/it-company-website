@@ -21,6 +21,7 @@ defineProps({
   background: white;
   padding: 30px;
   border-radius: 12px;
+  border-top: 4px solid #2563eb;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
