@@ -34,6 +34,13 @@
       </button>
 
       <button
+        class="reset-filters"
+        @click="resetFilters"
+    >
+        Clear Filters
+</button>
+
+      <button
         :class="{ active: selectedCategory === 'Web' }"
         @click="selectedCategory = 'Web'"
     >
@@ -101,6 +108,11 @@ const filteredProjects = computed(() => {
     a.title.localeCompare(b.title)
   )
 })
+
+const resetFilters = () => {
+  selectedCategory.value = "All"
+  searchText.value = ""
+}
 
 const highlightMatch = (text) => {
   if (!searchText.value) return text
@@ -211,5 +223,18 @@ const highlightMatch = (text) => {
   margin-bottom: 20px;
   color: #666;
   font-size: 14px;
+}
+.reset-filters {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #6b7280;
+  color: white;
+  cursor: pointer;
+}
+
+.reset-filters:hover {
+  background: #4b5563;
 }
 </style>
