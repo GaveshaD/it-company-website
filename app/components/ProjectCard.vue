@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card">
+  <div class="project-card" :class="category.toLowerCase()">
     <h2 v-html="highlightedTitle || title"></h2>
     <p>{{ description }}</p>
     <span class="category" :class="category.toLowerCase()">{{ category }}</span>
@@ -21,7 +21,6 @@ defineProps({
   background: white;
   padding: 30px;
   border-radius: 12px;
-  border-top: 4px solid #2563eb;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -52,5 +51,16 @@ defineProps({
 
 .category.cloud {
   background: #9333ea;
+}
+.project-card.web {
+  border-top: 4px solid #2563eb;
+}
+
+.project-card.mobile {
+  border-top: 4px solid #16a34a;
+}
+
+.project-card.cloud {
+  border-top: 4px solid #9333ea;
 }
 </style>
