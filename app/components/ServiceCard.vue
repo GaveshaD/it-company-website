@@ -1,5 +1,6 @@
 <template>
   <div class="card">
+    <div class="icon">{{ icon }}</div>
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
   </div>
@@ -7,6 +8,7 @@
 
 <script setup>
 defineProps({
+  icon: String,
   title: String,
   description: String
 })
@@ -34,5 +36,9 @@ defineProps({
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 </style>
