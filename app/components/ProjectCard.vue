@@ -2,7 +2,7 @@
   <div class="project-card">
     <h2 v-html="highlightedTitle || title"></h2>
     <p>{{ description }}</p>
-    <span class="category">{{ category }}</span>
+    <span class="category" :class="category.toLowerCase()">{{ category }}</span>
   </div>
 </template>
 
@@ -34,9 +34,20 @@ defineProps({
   display: inline-block;
   margin-top: 10px;
   padding: 4px 10px;
-  background: #2563eb;
-  color: rgb(250, 245, 245);
   border-radius: 999px;
   font-size: 14px;
+  color: white;
+}
+
+.category.web {
+  background: #2563eb;
+}
+
+.category.mobile {
+  background: #16a34a;
+}
+
+.category.cloud {
+  background: #9333ea;
 }
 </style>
