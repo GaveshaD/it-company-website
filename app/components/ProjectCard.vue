@@ -30,6 +30,9 @@ defineProps({
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+.project-card:active {
+  transform: scale(0.98);
+}
 .category {
   display: inline-block;
   margin-top: 10px;

@@ -1,7 +1,13 @@
 <template>
   <section class="projects">
     <h1>Our Projects</h1>
+    
+    <h3 class="project-count">
+      Total Projects: {{ projects.length }}
+    </h3>
     <p>Here are some projects completed by FutureTech Solutions.</p>
+
+    
 
 
     <input
@@ -241,5 +247,10 @@ const highlightMatch = (text) => {
 
 .reset-filters:hover {
   background: #4b5563;
+}
+.project-count {
+  color: #2563eb;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 </style>
