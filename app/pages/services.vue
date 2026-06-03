@@ -10,17 +10,17 @@
 
     <div class="services">
       <ServiceCard
-        title="Web Development"
+        title="🌐 Web Development"
         description="Modern responsive websites using Nuxt and Vue."
       />
 
       <ServiceCard
-        title="Mobile Apps"
+        title="📱 Mobile Apps"
         description="Android and iOS application development."
       />
 
       <ServiceCard
-        title="Cloud Solutions"
+        title="☁️ Cloud Solutions"
         description="Scalable cloud infrastructure and deployment."
       />
 
