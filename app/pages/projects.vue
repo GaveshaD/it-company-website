@@ -25,6 +25,11 @@
       </span>
     </p>
 
+    <p class="project-summary">
+      Showing {{ filteredProjects.length }} of {{ projects.length }} projects
+    </p>
+
+
     <div class="filters">
       <button
         :class="{ active: selectedCategory === 'All' }"
