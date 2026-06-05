@@ -22,6 +22,10 @@
         :title="service.title"
         :description="service.description"
       />
+
+      <p v-if="filteredServices.length === 0" class="no-services">
+        No services found.
+      </p>
     </div>
   </div>
 </template>
@@ -95,5 +99,10 @@ const filteredServices = computed(() =>
   display: block;
   border: 1px solid #ccc;
   border-radius: 8px;
+}
+.no-services {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
 }
 </style>
