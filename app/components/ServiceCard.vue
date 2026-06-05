@@ -4,7 +4,10 @@
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
 
-    <span class="service-category">
+    <span
+      class="service-category"
+      :class="category.toLowerCase()"
+    >
       {{ category }}
     </span>
   </div>
@@ -54,5 +57,25 @@ defineProps({
   background: #2563eb;
   color: white;
   font-size: 12px;
+}
+.service-category {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+}
+
+.service-category.web {
+  background: #2563eb;
+}
+
+.service-category.mobile {
+  background: #16a34a;
+}
+
+.service-category.cloud {
+  background: #9333ea;
 }
 </style>
