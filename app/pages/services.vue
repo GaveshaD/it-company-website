@@ -14,6 +14,10 @@
       placeholder="Search services..."
     />
 
+    <p class="service-results">
+      {{ filteredServices.length }} service(s) found
+    </p>
+
     <div class="services">
       <ServiceCard
         v-for="service in filteredServices"
@@ -104,5 +108,11 @@ const filteredServices = computed(() =>
   text-align: center;
   color: #666;
   margin-top: 20px;
+}
+.service-results {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 </style>
