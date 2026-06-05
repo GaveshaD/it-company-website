@@ -18,6 +18,14 @@
       {{ filteredServices.length }} service(s) found
     </p>
 
+    <button
+      v-if="searchText"
+      class="clear-service-search"
+      @click="searchText = ''"
+    >
+      Clear
+    </button>
+
     <div class="services">
       <ServiceCard
         v-for="service in filteredServices"
@@ -114,5 +122,19 @@ const filteredServices = computed(() =>
   color: #666;
   font-size: 14px;
   margin-bottom: 20px;
+}
+.clear-service-search {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.clear-service-search:hover {
+  opacity: 0.9;
 }
 </style>
