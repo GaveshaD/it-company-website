@@ -37,6 +37,7 @@
         :icon="service.icon"
         :title="service.title"
         :description="service.description"
+        :category="service.category"
       />
 
       <p v-if="filteredServices.length === 0" class="no-services">
@@ -53,19 +54,22 @@ const searchText = ref("")
 
 const services = [
   {
-    icon: "🌐",
+    
     title: "Web Development",
-    description: "Modern responsive websites using Nuxt and Vue."
+    description: "Modern responsive websites using Nuxt and Vue.",
+    category: "Web"
   },
   {
-    icon: "📱",
+    
     title: "Mobile Apps",
-    description: "Android and iOS application development."
+    description: "Android and iOS application development.",
+    category: "Mobile"
   },
   {
-    icon: "☁️",
+    
     title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and deployment."
+    description: "Scalable cloud infrastructure and deployment.",
+    category: "Cloud"
   }
 ]
 
