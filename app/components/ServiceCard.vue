@@ -3,6 +3,10 @@
     <div class="icon">{{ icon }}</div>
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
+
+    <span class="service-category">
+      {{ category }}
+    </span>
   </div>
 </template>
 
@@ -10,7 +14,8 @@
 defineProps({
   icon: String,
   title: String,
-  description: String
+  description: String,
+  category: String
 })
 </script>
 
@@ -40,5 +45,14 @@ defineProps({
 .icon {
   font-size: 32px;
   margin-bottom: 10px;
+}
+.service-category {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: white;
+  font-size: 12px;
 }
 </style>
