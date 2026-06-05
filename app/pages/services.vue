@@ -7,6 +7,10 @@
       We currently offer {{ services.length }} services.
     </p>
 
+    <p class="service-summary">
+      Showing {{ filteredServices.length }} of {{ services.length }} services
+    </p>
+
     <input
       v-model="searchText"
       class="service-search"
@@ -136,5 +140,11 @@ const filteredServices = computed(() =>
 
 .clear-service-search:hover {
   opacity: 0.9;
+}
+.service-summary {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 </style>
