@@ -128,8 +128,9 @@ const filteredServices = computed(() => {
 
   result = result.filter(service =>
     service.title.toLowerCase().includes(searchText.value.toLowerCase()) ||
-    service.description.toLowerCase().includes(searchText.value.toLowerCase())
-  )
+    service.description.toLowerCase().includes(searchText.value.toLowerCase()) ||
+    service.category.toLowerCase().includes(searchText.value.toLowerCase())
+)
 
   return [...result].sort((a, b) =>
     sortOrder.value === "asc"
