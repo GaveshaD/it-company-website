@@ -4,7 +4,7 @@
     <p>We provide a range of IT solutions...</p>
 
     <p class="service-count">
-      We currently offer {{ services.length }} services.
+      We currently offer {{ filteredServices.length }} services.
     </p>
 
     
