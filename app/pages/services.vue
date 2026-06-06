@@ -25,6 +25,10 @@
       <option value="desc">Z → A</option>
     </select>
 
+    <p class="sort-indicator">
+      Sorting: {{ sortOrder === 'asc' ? 'A → Z' : 'Z → A' }}
+    </p>
+
     <p class="service-results">
       {{ filteredServices.length }} service(s) found
     </p>
@@ -264,5 +268,23 @@ const filteredServices = computed(() => {
   color: #666;
   font-size: 14px;
   margin-bottom: 20px;
+}
+.sort-indicator {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.services {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
