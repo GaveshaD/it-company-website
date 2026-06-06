@@ -18,6 +18,11 @@
       placeholder="Search services..."
     />
 
+    <select v-model="sortOrder" class="service-sort">
+    <option value="asc">A → Z</option>
+    <option value="desc">Z → A</option>
+    </select>
+
     <p class="service-results">
       {{ filteredServices.length }} service(s) found
     </p>
@@ -52,6 +57,10 @@ import { ref, computed } from "vue"
 
 const searchText = ref("")
 
+const sortOrder = ref("asc")
+
+
+
 const services = [
   {
     
@@ -73,12 +82,19 @@ const services = [
   }
 ]
 
-const filteredServices = computed(() =>
-  services.filter(service =>
+const filteredServices = computed(() => {
+  const result = services.filter(service =>
     service.title.toLowerCase().includes(searchText.value.toLowerCase()) ||
     service.description.toLowerCase().includes(searchText.value.toLowerCase())
   )
-)
+
+  return [...result].sort((a, b) =>
+    sortOrder.value === "asc"
+      ? a.title.localeCompare(b.title)
+      : b.title.localeCompare(a.title)
+  )
+})
+
 </script>
 
 <style scoped>
@@ -150,5 +166,11 @@ const filteredServices = computed(() =>
   color: #666;
   margin-bottom: 20px;
   font-size: 14px;
+}
+.service-sort {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 8px;
+  border-radius: 6px;
 }
 </style>
