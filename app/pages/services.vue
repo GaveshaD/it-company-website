@@ -36,11 +36,35 @@
     </button>
 
     <div class="service-filters">
-      <button @click="selectedCategory = 'All'">All</button>
-      <button @click="selectedCategory = 'Web'">Web</button>
-      <button @click="selectedCategory = 'Mobile'">Mobile</button>
-      <button @click="selectedCategory = 'Cloud'">Cloud</button>
-    </div>
+    <button
+      :class="{ active: selectedCategory === 'All' }"
+      @click="selectedCategory = 'All'"
+    >
+      All
+    </button>
+
+    <button
+      :class="{ active: selectedCategory === 'Web' }"
+      @click="selectedCategory = 'Web'"
+    >
+      Web
+    </button>
+
+    <button
+      :class="{ active: selectedCategory === 'Mobile' }"
+      @click="selectedCategory = 'Mobile'"
+    >
+      Mobile
+    </button>
+
+     <button
+      :class="{ active: selectedCategory === 'Cloud' }"
+      @click="selectedCategory = 'Cloud'"
+    >
+      Cloud
+    </button>
+</div>
+
 
     <div class="services">
       <ServiceCard
@@ -191,5 +215,9 @@ const filteredServices = computed(() => {
   .services {
     grid-template-columns: 1fr;
   }
+}
+.service-filters button.active {
+  background: #2563eb;
+  color: white;
 }
 </style>
