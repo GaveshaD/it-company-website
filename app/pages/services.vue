@@ -35,36 +35,22 @@
       Clear
     </button>
 
+    
+
     <div class="service-filters">
-    <button
-      :class="{ active: selectedCategory === 'All' }"
-      @click="selectedCategory = 'All'"
-    >
-      All
+
+      <button
+        class="reset-service-filters"
+        @click="resetServiceFilters"
+      >
+        Clear Filters
     </button>
 
-    <button
-      :class="{ active: selectedCategory === 'Web' }"
-      @click="selectedCategory = 'Web'"
-    >
-      Web
-    </button>
-
-    <button
-      :class="{ active: selectedCategory === 'Mobile' }"
-      @click="selectedCategory = 'Mobile'"
-    >
-      Mobile
-    </button>
-
-     <button
-      :class="{ active: selectedCategory === 'Cloud' }"
-      @click="selectedCategory = 'Cloud'"
-    >
-      Cloud
-    </button>
-</div>
-
+      <button :class="{ active: selectedCategory === 'All' }" @click="selectedCategory = 'All'">All</button>
+      <button :class="{ active: selectedCategory === 'Web' }" @click="selectedCategory = 'Web'">Web</button>
+      <button :class="{ active: selectedCategory === 'Mobile' }" @click="selectedCategory = 'Mobile'">Mobile</button>
+      <button :class="{ active: selectedCategory === 'Cloud' }" @click="selectedCategory = 'Cloud'">Cloud</button>
+    </div>
 
     <div class="services">
       <ServiceCard
@@ -111,13 +97,17 @@ const services = [
   }
 ]
 
+const resetServiceFilters = () => {
+  searchText.value = ""
+  selectedCategory.value = "All"
+  sortOrder.value = "asc"
+}
+
 const filteredServices = computed(() => {
   let result =
     selectedCategory.value === "All"
       ? services
-      : services.filter(
-          service => service.category === selectedCategory.value
-        )
+      : services.filter(service => service.category === selectedCategory.value)
 
   result = result.filter(service =>
     service.title.toLowerCase().includes(searchText.value.toLowerCase()) ||
@@ -219,5 +209,13 @@ const filteredServices = computed(() => {
 .service-filters button.active {
   background: #2563eb;
   color: white;
+}
+.reset-service-filters {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #6b7280;
+  color: white;
+  cursor: pointer;
 }
 </style>
