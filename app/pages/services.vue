@@ -25,9 +25,7 @@
       <option value="desc">Z → A</option>
     </select>
 
-    <p class="sort-indicator">
-      Sorting: {{ sortOrder === 'asc' ? 'A → Z' : 'Z → A' }}
-    </p>
+    
 
     <p class="service-results">
       {{ filteredServices.length }} service(s) found
