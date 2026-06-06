@@ -7,12 +7,18 @@
       We currently offer {{ services.length }} services.
     </p>
 
+    
+
     <input
       v-model="searchText"
       class="service-search"
       type="text"
-      placeholder="Search services..."
+      placeholder="Search by service name or description..."
     />
+
+    <p class="search-hint">
+      Search by service title or description.
+    </p>
 
     <select v-model="sortOrder" class="service-sort">
       <option value="asc">A → Z</option>
@@ -240,5 +246,12 @@ const filteredServices = computed(() => {
   background: #6b7280;
   color: white;
   cursor: pointer;
+}
+.search-hint {
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 15px;
 }
 </style>
