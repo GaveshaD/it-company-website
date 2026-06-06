@@ -28,7 +28,10 @@
     
 
     <p class="service-results">
-      {{ filteredServices.length }} service(s) found
+        {{ filteredServices.length }} service(s) found
+    <span v-if="searchText">
+        for "{{ searchText }}"
+      </span>
     </p>
 
     <p class="service-summary">
