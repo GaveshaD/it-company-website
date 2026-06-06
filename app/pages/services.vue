@@ -46,10 +46,33 @@
         Clear Filters
     </button>
 
-      <button :class="{ active: selectedCategory === 'All' }" @click="selectedCategory = 'All'">All</button>
-      <button :class="{ active: selectedCategory === 'Web' }" @click="selectedCategory = 'Web'">Web</button>
-      <button :class="{ active: selectedCategory === 'Mobile' }" @click="selectedCategory = 'Mobile'">Mobile</button>
-      <button :class="{ active: selectedCategory === 'Cloud' }" @click="selectedCategory = 'Cloud'">Cloud</button>
+    <button
+      :class="{ active: selectedCategory === 'All' }"
+      @click="selectedCategory = 'All'"
+    >
+      All ({{ services.length }})
+    </button>
+
+    <button
+      :class="{ active: selectedCategory === 'Web' }"
+      @click="selectedCategory = 'Web'"
+    >
+      Web ({{ services.filter(service => service.category === 'Web').length }})
+    </button>
+
+    <button
+      :class="{ active: selectedCategory === 'Mobile' }"
+      @click="selectedCategory = 'Mobile'"
+    >
+      Mobile ({{ services.filter(service => service.category === 'Mobile').length }})
+    </button>
+
+    <button
+      :class="{ active: selectedCategory === 'Cloud' }"
+      @click="selectedCategory = 'Cloud'"
+    >
+      Cloud ({{ services.filter(service => service.category === 'Cloud').length }})
+    </button>
     </div>
 
     <div class="services">
