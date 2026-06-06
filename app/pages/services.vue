@@ -81,6 +81,11 @@
     </button>
     </div>
 
+    <p class="selected-service-category">
+      Selected category: {{ selectedCategory }}
+    </p>
+
+
     <div class="services">
       <ServiceCard
         v-for="service in filteredServices"
@@ -253,5 +258,11 @@ const filteredServices = computed(() => {
   font-size: 12px;
   margin-top: -10px;
   margin-bottom: 15px;
+}
+.selected-service-category {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 </style>
