@@ -92,7 +92,6 @@
       <ServiceCard
         v-for="service in filteredServices"
         :key="service.title"
-        :icon="service.icon"
         :title="service.title"
         :description="service.description"
         :category="service.category"
@@ -108,30 +107,12 @@
 <script setup>
 import { ref, computed } from "vue"
 
+import { services } from "~/data/services"
+
 const searchText = ref("")
 const sortOrder = ref("asc")
 const selectedCategory = ref("All")
 
-const services = [
-  {
-    
-    title: "Web Development",
-    description: "Modern responsive websites using Nuxt and Vue.",
-    category: "Web"
-  },
-  {
-    
-    title: "Mobile Apps",
-    description: "Android and iOS application development.",
-    category: "Mobile"
-  },
-  {
-    
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and deployment.",
-    category: "Cloud"
-  }
-]
 
 const resetServiceFilters = () => {
   searchText.value = ""

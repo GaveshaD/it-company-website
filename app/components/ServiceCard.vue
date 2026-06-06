@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="icon">{{ icon }}</div>
+    
 
     <h2>{{ title }}</h2>
 
@@ -17,7 +17,6 @@
 
 <script setup>
 defineProps({
-  icon: String,
   title: String,
   description: String,
   category: String
@@ -49,10 +48,7 @@ defineProps({
   line-height: 1.5;
 }
 
-.icon {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
+
 
 .service-category {
   display: inline-block;
