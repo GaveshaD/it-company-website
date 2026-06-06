@@ -2,7 +2,7 @@
   <div class="card">
     
 
-    <h2>{{ title }}</h2>
+    <h2 v-html="highlightedTitle || title"></h2>
 
     <p>{{ description }}</p>
 
@@ -19,7 +19,8 @@
 defineProps({
   title: String,
   description: String,
-  category: String
+  category: String,
+  highlightedTitle: String
 })
 </script>
 
@@ -69,5 +70,10 @@ defineProps({
 
 .service-category.cloud {
   background: #9333ea;
+}
+mark {
+  background: #facc15;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 </style>
