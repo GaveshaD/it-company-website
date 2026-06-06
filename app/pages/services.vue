@@ -96,6 +96,7 @@
         v-for="service in filteredServices"
         :key="service.title"
         :title="service.title"
+        :highlighted-title="highlightMatch(service.title)"
         :description="service.description"
         :category="service.category"
       />
@@ -121,6 +122,14 @@ const resetServiceFilters = () => {
   searchText.value = ""
   selectedCategory.value = "All"
   sortOrder.value = "asc"
+}
+
+const highlightMatch = (text) => {
+  if (!searchText.value) return text
+
+  const regex = new RegExp(`(${searchText.value})`, "gi")
+
+  return text.replace(regex, "<mark>$1</mark>")
 }
 
 const filteredServices = computed(() => {
