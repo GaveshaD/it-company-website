@@ -58,6 +58,13 @@
     </button>
 
     <button
+      :class="{ active: showFeaturedOnly }"
+      @click="showFeaturedOnly = !showFeaturedOnly"
+    >
+      Featured Only
+    </button>
+
+    <button
       :class="{ active: selectedCategory === 'All' }"
       @click="selectedCategory = 'All'"
     >
@@ -123,6 +130,7 @@ const resetServiceFilters = () => {
   searchText.value = ""
   selectedCategory.value = "All"
   sortOrder.value = "asc"
+  showFeaturedOnly.value = false
 }
 
 const highlightMatch = (text) => {
@@ -144,6 +152,10 @@ const filteredServices = computed(() => {
     service.description.toLowerCase().includes(searchText.value.toLowerCase()) ||
     service.category.toLowerCase().includes(searchText.value.toLowerCase())
 )
+
+  if (showFeaturedOnly.value) {
+    result = result.filter(service => service.featured)
+}
 
   return [...result].sort((a, b) =>
     sortOrder.value === "asc"
