@@ -39,11 +39,11 @@
     </p>
 
     <button
-      v-if="searchText"
+      v-if="searchText.trim()"
       class="clear-service-search"
       @click="searchText = ''"
     >
-      Clear
+      Clear Search
     </button>
 
     
