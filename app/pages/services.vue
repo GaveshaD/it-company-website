@@ -124,6 +124,7 @@ import { services } from "~/data/services"
 const searchText = ref("")
 const sortOrder = ref("asc")
 const selectedCategory = ref("All")
+const showFeaturedOnly = ref(false)
 
 
 const resetServiceFilters = () => {
