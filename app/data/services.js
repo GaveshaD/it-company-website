@@ -2,16 +2,19 @@ export const services = [
   {
     title: "Web Development",
     description: "Modern responsive websites using Nuxt and Vue.",
-    category: "Web"
+    category: "Web",
+    featured: true
   },
   {
     title: "Mobile Apps",
     description: "Android and iOS application development.",
-    category: "Mobile"
+    category: "Mobile",
+    featured: false
   },
   {
     title: "Cloud Solutions",
     description: "Scalable cloud infrastructure and deployment.",
-    category: "Cloud"
+    category: "Cloud",
+    featured: false
   }
 ]

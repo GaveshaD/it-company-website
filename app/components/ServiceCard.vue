@@ -1,5 +1,9 @@
 <template>
   <div class="card">
+
+    <span v-if="featured" class="featured-badge">
+      ⭐ Featured
+    </span>
     
 
     <h2 v-html="highlightedTitle || title"></h2>
@@ -20,7 +24,8 @@ defineProps({
   title: String,
   description: String,
   category: String,
-  highlightedTitle: String
+  highlightedTitle: String,
+  featured: Boolean
 })
 </script>
 
@@ -75,5 +80,15 @@ mark {
   background: #facc15;
   padding: 2px 4px;
   border-radius: 4px;
+}
+.featured-badge {
+  display: inline-block;
+  background: gold;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 </style>

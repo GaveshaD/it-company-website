@@ -99,6 +99,7 @@
         :highlighted-title="highlightMatch(service.title)"
         :description="service.description"
         :category="service.category"
+        :featured="service.featured"
       />
     </div>
 
