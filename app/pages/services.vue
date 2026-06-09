@@ -4,7 +4,11 @@
     <p>We provide a range of IT solutions...</p>
 
     <p class="service-count">
-      We currently offer {{ filteredServices.length }} services.
+      We currently offer {{ services.length }} services.
+    </p>
+
+    <p class="featured-count">
+      Featured services: {{ featuredCount }}
     </p>
 
     
@@ -164,6 +168,10 @@ const filteredServices = computed(() => {
       : b.title.localeCompare(a.title)
   )
 })
+
+const featuredCount = computed(() =>
+  services.filter(service => service.featured).length
+)
 </script>
 
 <style scoped>
@@ -292,5 +300,12 @@ const filteredServices = computed(() => {
   to {
     opacity: 1;
   }
+}
+.featured-count {
+  text-align: center;
+  color: #f59e0b;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 </style>
