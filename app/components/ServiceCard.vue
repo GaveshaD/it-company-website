@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="category.toLowerCase()">
 
     <span v-if="featured" class="featured-badge">
       ⭐ Featured
@@ -90,5 +90,16 @@ mark {
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+.card.web {
+  border-left: 4px solid #2563eb;
+}
+
+.card.mobile {
+  border-left: 4px solid #16a34a;
+}
+
+.card.cloud {
+  border-left: 4px solid #9333ea;
 }
 </style>
