@@ -11,7 +11,9 @@
       Featured services: {{ featuredCount }}
     </p>
 
-    
+    <p class="category-count">
+      Current category count: {{ filteredServices.length }}
+    </p>
 
     <input
       v-model="searchText"
@@ -304,6 +306,13 @@ const featuredCount = computed(() =>
 .featured-count {
   text-align: center;
   color: #f59e0b;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.category-count {
+  text-align: center;
+  color: #2563eb;
   font-size: 14px;
   margin-bottom: 15px;
   font-weight: 600;
