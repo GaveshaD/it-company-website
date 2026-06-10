@@ -113,8 +113,22 @@
         :description="service.description"
         :category="service.category"
         :featured="service.featured"
+        @click="selectedService = service"
       />
     </div>
+
+    <div
+      v-if="selectedService"
+      class="service-modal"
+    >
+    <h2>{{ selectedService.title }}</h2>
+
+    <p>{{ selectedService.details }}</p>
+
+    <button @click="selectedService = null">
+      Close
+   </button>
+</div>
 
     <p v-if="filteredServices.length === 0" class="no-services">
       No services found.
@@ -131,7 +145,7 @@ const searchText = ref("")
 const sortOrder = ref("asc")
 const selectedCategory = ref("All")
 const showFeaturedOnly = ref(false)
-
+const selectedService = ref(null)
 
 const resetServiceFilters = () => {
   searchText.value = ""
@@ -316,5 +330,12 @@ const featuredCount = computed(() =>
   font-size: 14px;
   margin-bottom: 15px;
   font-weight: 600;
+}
+.service-modal {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 </style>
