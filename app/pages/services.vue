@@ -332,10 +332,32 @@ const featuredCount = computed(() =>
   font-weight: 600;
 }
 .service-modal {
-  margin-top: 30px;
-  padding: 20px;
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 25px;
   border-radius: 12px;
   background: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.service-modal h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.service-modal p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.service-modal button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
 }
 </style>
