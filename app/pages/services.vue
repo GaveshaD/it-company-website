@@ -104,43 +104,43 @@
     </p>
 
 
-    <div class="services">
-      <ServiceCard
-        v-for="service in filteredServices"
-        :key="service.title"
-        :title="service.title"
-        :highlighted-title="highlightMatch(service.title)"
-        :description="service.description"
-        :category="service.category"
-        :featured="service.featured"
-        @click="selectedService = service"
-      />
-    </div>
+   <div class="services">
+  <ServiceCard
+    v-for="service in filteredServices"
+    :key="service.title"
+    :title="service.title"
+    :highlighted-title="highlightMatch(service.title)"
+    :description="service.description"
+    :category="service.category"
+    :featured="service.featured"
+    @click="selectedService = service"
+  />
+</div>
 
-    <div
-      v-if="selectedService"
-      class="service-modal"
-      @click="selectedService = null"
-
-    >
-
-    <div
-      class="service-modal"
-      @click.stop
-    >
+<div
+  v-if="selectedService"
+  class="modal-overlay"
+  @click="selectedService = null"
+>
+  <div
+    class="service-modal"
+    @click.stop
+  >
     <h2>{{ selectedService.title }}</h2>
 
     <p>{{ selectedService.details }}</p>
 
     <button @click="selectedService = null">
       Close
-   </button>
+    </button>
+  </div>
 </div>
 
-    <p v-if="filteredServices.length === 0" class="no-services">
-      No services found.
-    </p>
-  </div>
+<p v-if="filteredServices.length === 0" class="no-services">
+  No services found.
+</p>
+
+</div>
 </template>
 
 <script setup>
