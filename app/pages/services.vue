@@ -120,6 +120,13 @@
     <div
       v-if="selectedService"
       class="service-modal"
+      @click="selectedService = null"
+
+    >
+
+    <div
+      class="service-modal"
+      @click.stop
     >
     <h2>{{ selectedService.title }}</h2>
 
@@ -359,5 +366,14 @@ const featuredCount = computed(() =>
   background: #2563eb;
   color: white;
   cursor: pointer;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 </style>
